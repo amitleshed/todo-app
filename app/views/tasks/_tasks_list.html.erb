@@ -24,6 +24,11 @@
               <td class="text-success">
                 <%= task.completed %>
               </td>
+              <td>
+                <%= link_to task_path(task), remote: true, method: :delete do %>
+                  &#x2715; 
+                  <% end %>
+              </td>
             </tr>
         <% end %>
       </tbody>
