@@ -1,2 +1,6 @@
-$('#task-list').html('<%= j(render partial: 'tasks/tasks_list', locals: {tasks: @tasks}) %>');
+<% if @tasks.count > 1 %> 
+$('#table-body').append('<%= j render @task %>');
+<% else %>
+$('#main-div').html("<%= escape_javascript render 'table', tasks: @tasks %>")
+<% end %>
 $('#modal').modal('hide');

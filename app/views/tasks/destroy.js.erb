@@ -1,1 +1,5 @@
-$('#task-list').html('<%= j(render partial: 'tasks_list', locals: {tasks: @tasks})%>');
+<% if @tasks.count == 0 %>
+$('#main-div').html('You have not added any todos yet.')
+<% else %>
+$('#task_<%= @task.id %>').hide();
+<% end %>

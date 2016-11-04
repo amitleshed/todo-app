@@ -1,0 +1,18 @@
+<tr id="task_<%= task.id %>">
+<td>
+  <strong>
+    <%= task.title %>
+  </strong>
+</td>
+<td class="text-info">
+  <%= task.created_at %>
+</td>
+<td class="text-success">
+  <%= task.completed %>
+</td>
+<td>
+  <%= link_to task_path(task), remote: true, method: :delete do %>
+    &#x2715; 
+    <% end %>
+</td>
+</tr>
